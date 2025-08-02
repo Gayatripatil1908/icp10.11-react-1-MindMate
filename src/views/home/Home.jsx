@@ -1,14 +1,16 @@
-import React from 'react'
+
+import React from 'react';
 import Navbar from '../../components/Navbar';
-import "./Home.css";
+import Footer from '../../components/Footer';
 
 
 function Home() {
   return (
-    <><Navbar />
+    <>
+      <Navbar />
+      <Footer />
     </>
-    
-  )
+  );
 }
 
 export default Home;

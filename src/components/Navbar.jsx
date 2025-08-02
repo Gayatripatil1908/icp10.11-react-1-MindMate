@@ -1,26 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.css'; 
 import imgLogo from '../assets/MindMate_Logo.png';
+import { Menu, X } from 'lucide-react';
+
 
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About' },
+    { to: '/contact', label: 'Contact' },
+    { to: '/dashboard', label: 'Dashboard' },
+    { to: '/goals', label: 'Goals' },
+    { to: '/login', label: 'Login' },
+  ];
+
   return (
-    <div className="static top-0 bg-orange-200 py-4 px-10 border-b-2 border-gray-300 shadow-md flex items-center justify-between">
-      <span className="text-xl font-bold text-gray-800 flex items-center">
-        <img src={imgLogo} alt="MindMate Logo" className="h-10 w-10 inline-block mr-2" />
+    <div className="sticky top-0 bg-[#cdb4db] py-4 px-2 sm:px-4 md:px-8 lg:px-10 border-b-2 border-gray-700 shadow-md flex items-center justify-between z-50">
+      <span className="text-lg sm:text-xl font-bold text-gray-800 flex items-center cursor-pointer">
+        <img src={imgLogo} alt="MindMate Logo" className="h-8 w-8 sm:h-10 sm:w-10 inline-block mr-2" />
         MindMate
       </span>
-      <nav>
-        <ul className="flex space-x-6 text-lg">
-          <li><Link to="/" className="hover:text-orange-600">Home</Link></li>
-          <li><Link to="/about" className="hover:text-orange-600">About</Link></li>
-          <li><Link to="/contact" className="hover:text-orange-600">Contact</Link></li>
-          <li><Link to="/dashboard" className="hover:text-orange-600">Dashboard</Link></li>
-          <li><Link to="/goals" className="hover:text-orange-600">Goals</Link></li>
-          <li><Link to="/login" className="hover:text-orange-600">Login</Link></li>
+      
+      <nav className="hidden md:block">
+        <ul className="flex space-x-4 sm:space-x-6 text-base sm:text-lg">
+          {navLinks.map((link) => (
+            <li key={link.to}>
+              <Link to={link.to} className="hover:text-orange-600 transition-colors duration-200">
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
+      
+      <button
+        className="md:hidden text-gray-800 focus:outline-none"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+      >
+        {menuOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+      
+      {menuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          
+          <div className="absolute inset-0 bg-black bg-opacity-30" onClick={() => setMenuOpen(false)}></div>
+         
+          <div className="absolute top-0 left-0 w-full bg-[#cdb4db] border-b-2 border-gray-700 shadow-md">
+            <nav>
+              <ul className="flex flex-col space-y-4 py-4 px-4 sm:px-8 text-base sm:text-lg">
+                {navLinks.map((link) => (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="hover:text-orange-600 transition-colors duration-200"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
