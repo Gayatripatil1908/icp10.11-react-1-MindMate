@@ -1,40 +1,17 @@
 import React from 'react'
 import './Navbar.css'; 
-import { NavLink } from 'react-router';
+import imgLogo from '../assets/MindMate_Logo.png';
+
 
 function Navbar() {
-  return (
-    <nav className='navbar'>
-        <div className='nav-container'>
-            <NavLink exact to="/" className='nav-logo'>
-                MindMate 
-            </NavLink>
-
-            <ul className='nav-menu'>
-                <li className='nav-item'>
-                    <NavLink exact to="/"  className='nav-links'> Home
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink exact to="/About"  className='nav-links'> About
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink exact to="/"  className='nav-links'> Home
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink exact to="/Login"  className='nav-links'> Login
-                    </NavLink>
-                </li>
-            </ul>
-
-        </div>
-    </nav>
-  )
+  return <div className="static top-0 bg-orange-200 py-4 px 10 border-b-2 border-gray-300 shadow-md ">
+    <span className="text-xl font-bold text-gray-800 flex items-center">
+        <img src={imgLogo} alt="MindMate Logo" className="h-10 w-10 inline-block mr-2" />
+        MindMate
+    </span>
+  </div>
+    
+  
 }
 
 export default Navbar;
