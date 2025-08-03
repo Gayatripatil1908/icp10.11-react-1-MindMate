@@ -9,6 +9,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
     { to: '/', label: 'Home' },
+    { to: '/moodtracker', label: 'Mood Tracker' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
     { to: '/dashboard', label: 'Dashboard' },

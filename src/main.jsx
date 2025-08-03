@@ -12,6 +12,7 @@ import Goals from './views/goals/goals';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import MoodTracker from './views/moodtracker/MoodTracker';
 
 
 
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/moodtracker" element={<MoodTracker />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/dashboard" element={<Dashboard />} />
