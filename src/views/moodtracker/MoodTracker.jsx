@@ -1,133 +1,263 @@
-import React, { useState } from 'react';
-import { FaSmile, FaFrown, FaMeh, FaAngry, FaTired } from 'react-icons/fa';
+// MoodTracker.jsx
+
+import React, { useState } from "react";
+import {
+  FaSmile,
+  FaFrown,
+  FaAngry,
+  FaMeh,
+  FaTired,
+} from "react-icons/fa";
 
 const MoodTracker = () => {
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState([]);
-  const [finalMood, setFinalMood] = useState(null);
-
   const questions = [
-    "Did you sleep well last night?",
-    "Do you feel energetic today?",
-    "Are you excited about anything today?",
-    "Have you felt stressed recently?",
-    "Do you feel like talking to someone right now?"
+    "Did you get enough sleep?",
+    "Are you feeling stressed today?",
+    "Did you have any positive interactions today?",
   ];
 
-  const options = ['Yes', 'No'];
+  const moods = [
+    { icon: <FaSmile color="#fdd835" />, label: "Happy" },
+    { icon: <FaFrown color="#64b5f6" />, label: "Sad" },
+    { icon: <FaAngry color="#e53935" />, label: "Angry" },
+    { icon: <FaMeh color="#ffb74d" />, label: "Neutral" },
+    { icon: <FaTired color="#9575cd" />, label: "Tired" },
+  ];
 
-  const moodsMap = {
-    'Happy': <FaSmile color="orange" size={48} />,
-    'Sad': <FaFrown color="blue" size={48} />,
-    'Neutral': <FaMeh color="gray" size={48} />,
-    'Angry': <FaAngry color="red" size={48} />,
-    'Tired': <FaTired color="purple" size={48} />
-  };
+  const [step, setStep] = useState(0);
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+  const [detectedMood, setDetectedMood] = useState(null);
+  const [note, setNote] = useState("");
 
-  const calculateMood = () => {
-    const yesCount = answers.filter(a => a === 'Yes').length;
-    const noCount = answers.length - yesCount;
-
-    if (yesCount >= 4) return 'Happy';
-    if (yesCount === 3) return 'Neutral';
-    if (yesCount === 2) return 'Tired';
-    if (yesCount === 1) return 'Sad';
-    return 'Angry';
-  };
-
-  const handleAnswer = (answer) => {
-    const updatedAnswers = [...answers, answer];
+  const handleAnswer = (value) => {
+    const updatedAnswers = [...answers];
+    updatedAnswers[step] = value;
     setAnswers(updatedAnswers);
+  };
 
-    if (questionIndex + 1 < questions.length) {
-      setQuestionIndex(questionIndex + 1);
+  const nextStep = () => {
+    if (step < questions.length - 1) {
+      setStep(step + 1);
     } else {
-      const mood = calculateMood(updatedAnswers);
-      setFinalMood(mood);
+      detectMood(answers);
     }
   };
 
-  return (
-    <div style={styles.container}>
-      <h2 style={styles.heading}>Mood Tracker</h2>
+  const prevStep = () => {
+    if (step > 0) setStep(step - 1);
+  };
 
-      {!finalMood ? (
-        <div style={styles.questionBox}>
-          <p style={styles.question}>{questions[questionIndex]}</p>
-          <div style={styles.options}>
-            {options.map(option => (
+  const detectMood = (answers) => {
+    let score = 0;
+    answers.forEach((a) => {
+      if (a === "yes") score++;
+    });
+
+    if (score === 3) setDetectedMood("Happy");
+    else if (score === 2) setDetectedMood("Neutral");
+    else if (score === 1) setDetectedMood("Tired");
+    else setDetectedMood("Sad");
+  };
+
+  return (
+    <div className="tracker-container">
+      <div className="card bounce-in">
+        {!detectedMood ? (
+          <div className="question-content">
+            <h2>Mood Tracker</h2>
+            <p>{questions[step]}</p>
+            <div className="btn-group">
               <button
-                key={option}
-                onClick={() => handleAnswer(option)}
-                style={styles.button}
+                className={answers[step] === "yes" ? "active" : ""}
+                onClick={() => handleAnswer("yes")}
               >
-                {option}
+                Yes
               </button>
-            ))}
+              <button
+                className={answers[step] === "no" ? "active" : ""}
+                onClick={() => handleAnswer("no")}
+              >
+                No
+              </button>
+            </div>
+
+            <div className="step-buttons">
+              <button disabled={step === 0} onClick={prevStep}>
+                ← Back
+              </button>
+              <button
+                disabled={!answers[step]}
+                onClick={nextStep}
+              >
+                {step === questions.length - 1 ? "Submit" : "Next →"}
+              </button>
+            </div>
           </div>
-        </div>
-      ) : (
-        <div style={styles.resultBox}>
-          <p style={styles.resultText}>Your mood today is:</p>
-          <div>{moodsMap[finalMood]}</div>
-          <h3 style={{ marginTop: '1rem' }}>{finalMood}</h3>
-        </div>
-      )}
+        ) : (
+          <div className="result-content">
+            <h2>Your Mood</h2>
+            <p>You might be feeling:</p>
+            <h3>
+              {moods.find((m) => m.label === detectedMood)?.icon} {detectedMood}
+            </h3>
+
+            <textarea
+              placeholder="Add a note (optional)"
+              value={note}
+              onChange={(e) => setNote(e.target.value)}
+            />
+
+            <button
+              onClick={() => {
+                setStep(0);
+                setAnswers(Array(questions.length).fill(null));
+                setDetectedMood(null);
+                setNote("");
+              }}
+            >
+              Track Again
+            </button>
+          </div>
+        )}
+      </div>
+
+      <style>{`
+        .tracker-container {
+          background-color: #F4F0FF;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          font-family: 'Segoe UI', sans-serif;
+          color: #333;
+        }
+
+        .bounce-in {
+          animation: bounce 0.6s ease;
+        }
+
+        @keyframes bounce {
+          0% { transform: scale(0.95); opacity: 0; }
+          50% { transform: scale(1.03); opacity: 1; }
+          100% { transform: scale(1); }
+        }
+
+        .card {
+          width: 100%;
+          max-width: 500px;
+          background: #ffffff;
+          border-radius: 16px;
+          padding: 2rem;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          text-align: center;
+          font-size: 1.1rem;
+        }
+
+        .btn-group {
+          display: flex;
+          justify-content: center;
+          gap: 1.2rem;
+          margin-top: 1.5rem;
+        }
+
+        .btn-group button {
+          padding: 0.7rem 1.4rem;
+          font-size: 1rem;
+          border: 2px solid transparent;
+          border-radius: 8px;
+          cursor: pointer;
+          background-color: #ece4ff;
+          transition: all 0.3s ease;
+        }
+
+        .btn-group button.active {
+          background-color: #d1c4e9;
+          font-weight: bold;
+          border-color: #9575cd;
+        }
+
+        .btn-group button:hover {
+          background-color: #e0d7ff;
+          transform: translateY(-2px);
+        }
+
+        .step-buttons {
+          margin-top: 2rem;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .step-buttons button {
+          padding: 0.7rem 1.4rem;
+          font-size: 1rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          background-color: #9575cd;
+          color: white;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .step-buttons button:hover {
+          background-color: #7e57c2;
+          transform: scale(1.05);
+        }
+
+        .step-buttons button:disabled {
+          background-color: #d1c4e9;
+          color: #666;
+          cursor: not-allowed;
+        }
+
+        .result-content h3 {
+          font-size: 1.6rem;
+          margin: 1rem 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        textarea {
+          display: block;
+          width: 100%;
+          margin: 1rem 0;
+          padding: 0.6rem;
+          border-radius: 8px;
+          border: 1px solid #ccc;
+          resize: none;
+        }
+
+        .result-content button {
+          display: block;
+          margin: auto;
+          background-color: #e53935;
+          color: white;
+          padding: 0.6rem 1.4rem;
+          font-size: 1rem;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+
+        .result-content button:hover {
+          background-color: #d32f2f;
+          transform: scale(1.05);
+        }
+      `}</style>
     </div>
   );
-};
-
-// Inline CSS
-const styles = {
-  container: {
-    padding: '2rem',
-    textAlign: 'center',
-    fontFamily: "'Segoe UI', sans-serif",
-    background: '#fff0f6',
-    minHeight: '80vh'
-  },
-  heading: {
-    fontSize: '2rem',
-    marginBottom: '1rem',
-    color: '#d6336c'
-  },
-  questionBox: {
-    backgroundColor: '#fff',
-    borderRadius: '1rem',
-    padding: '2rem',
-    boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-    display: 'inline-block'
-  },
-  question: {
-    fontSize: '1.2rem',
-    marginBottom: '1rem'
-  },
-  options: {
-    display: 'flex',
-    justifyContent: 'center',
-    gap: '1rem'
-  },
-  button: {
-    padding: '0.75rem 1.5rem',
-    fontSize: '1rem',
-    borderRadius: '0.5rem',
-    border: 'none',
-    cursor: 'pointer',
-    backgroundColor: '#ffccd5',
-    color: '#333',
-    fontWeight: 'bold'
-  },
-  resultBox: {
-    backgroundColor: '#fff3f6',
-    padding: '2rem',
-    borderRadius: '1rem',
-    display: 'inline-block',
-    boxShadow: '0 0 10px rgba(0,0,0,0.15)'
-  },
-  resultText: {
-    fontSize: '1.2rem',
-    marginBottom: '1rem'
-  }
 };
 
 export default MoodTracker;
