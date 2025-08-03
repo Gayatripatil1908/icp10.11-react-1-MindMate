@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function App() {
+function Setting() {
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState(true);
 
@@ -66,3 +66,4 @@ export default function App() {
     </div>
   );
 }
+export default Setting;
