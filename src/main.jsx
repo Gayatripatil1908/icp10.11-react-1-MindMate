@@ -2,19 +2,15 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Home from './views/home/Home';
 import About from './views/about/About';
 import Contact from './views/contact/Contact';
 import Dashboard from './views/dashboard/Dashboard';
 import Login from './views/login/Login';
 import Goals from './views/goals/goals';
-
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MoodTracker from './views/moodtracker/MoodTracker';
-
-
 
 createRoot(document.getElementById('root')).render(
   <Router>
@@ -29,7 +25,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/login" element={<Login />} />
         <Route path="/goals" element={<Goals />} />
       </Routes>
-
       <Footer />
     </>
   </Router>
