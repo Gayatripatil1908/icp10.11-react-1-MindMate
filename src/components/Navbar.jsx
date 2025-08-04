@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
-    { to: '/', label: 'Home' },
+    { to: '/Home', label: 'Home' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
     { to: '/dashboard', label: 'Dashboard' },
@@ -17,8 +17,8 @@ function Navbar() {
   ];
 
   return (
-    <div className="sticky top-0 bg-[#cdb4db] py-4 px-2 sm:px-4 md:px-8 lg:px-10 border-b-2 border-gray-700 shadow-md flex items-center justify-between z-50">
-      <span className="text-lg sm:text-xl font-bold text-gray-800 flex items-center cursor-pointer">
+    <div className="sticky top-0 bg-[#1e5067] py-4 px-2 sm:px-4 md:px-8 lg:px-10 border-b-2 border-gray-700 shadow-md flex items-center justify-between z-50 text-[#cbd8df]">
+      <span className="text-2xl sm:text-xl font-bold flex items-center cursor-pointer text-[#cbd8df]">
         <img src={imgLogo} alt="MindMate Logo" className="h-8 w-8 sm:h-10 sm:w-10 inline-block mr-2" />
         MindMate
       </span>

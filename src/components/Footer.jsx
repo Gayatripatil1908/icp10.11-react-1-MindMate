@@ -3,25 +3,40 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8 mt-12">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        <div className="mb-4 md:mb-0 flex items-center space-x-2">
-          <img src="/src/assets/MindMate_Logo.png" alt="MindMate Logo" className="h-8 w-8" />
-          <span className="font-bold text-lg text-white">MindMate</span>
+    <footer className="bg-gray-100 text-gray-700 py-8 mt-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div>
+          <h2 className="text-xl font-semibold text-[#1e5067]">MindMate</h2>
+          <p className="mt-2 text-sm">
+            Your AI-powered mental wellness companion. Track your mood, journal, and grow every day.
+          </p>
         </div>
-        <nav className="mb-4 md:mb-0">
-          <ul className="flex flex-wrap gap-4 text-sm">
-            <li><Link to="/" className="hover:text-white transition">Home</Link></li>
-            <li><Link to="/about" className="hover:text-white transition">About</Link></li>
-            <li><Link to="/dashboard" className="hover:text-white transition">Dashboard</Link></li>
-            <li><Link to="/goals" className="hover:text-white transition">Goals</Link></li>
-            <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
-            <li><Link to="/login" className="hover:text-white transition">Login</Link></li>
+
+        
+        <div>
+          <h3 className="text-md font-semibold mb-2">Quick Links</h3>
+          <ul className="space-y-1 text-sm">
+            <li><a href="#features" className="hover:text-purple-600">Features</a></li>
+            <li><a href="#how-it-works" className="hover:text-purple-600">How It Works</a></li>
+            <li><a href="#testimonials" className="hover:text-purple-600">Testimonials</a></li>
+            <li><a href="#get-started" className="hover:text-purple-600">Get Started</a></li>
           </ul>
-        </nav>
-        <div className="text-xs text-gray-400 text-center md:text-right">
-          &copy; {new Date().getFullYear()} MindMate. All rights reserved.
         </div>
+
+        
+        <div>
+          <h3 className="text-md font-semibold mb-2">Support</h3>
+          <ul className="space-y-1 text-sm">
+            <li><a href="#privacy" className="hover:text-purple-600">Privacy Policy</a></li>
+            <li><a href="#terms" className="hover:text-purple-600">Terms & Conditions</a></li>
+            <li><a href="mailto:support@mindmate.com" className="hover:text-purple-600">support@mindmate.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="text-center mt-8 text-xs text-gray-500">
+        &copy; {new Date().getFullYear()} MindMate. All rights reserved.
       </div>
     </footer>
   );
