@@ -27,7 +27,7 @@ function Navbar() {
         <ul className="flex space-x-4 sm:space-x-6 text-base sm:text-lg">
           {navLinks.map((link) => (
             <li key={link.to}>
-              <Link to={link.to} className="hover:text-orange-600 transition-colors duration-200">
+              <Link to={link.to} className="hover:text-[#141e26] transition-colors duration-200">
                 {link.label}
               </Link>
             </li>
@@ -46,16 +46,16 @@ function Navbar() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           
-          <div className="absolute inset-0 bg-black bg-opacity-30" onClick={() => setMenuOpen(false)}></div>
+          <div className="absolute inset-0  bg-opacity-30" onClick={() => setMenuOpen(false)}></div>
          
-          <div className="absolute top-0 left-0 w-full bg-[#cdb4db] border-b-2 border-gray-700 shadow-md">
+          <div className="absolute top-0 left-0 w-full bg-[#1e5067] border-b-2 border-gray-700 shadow-md ">
             <nav>
               <ul className="flex flex-col space-y-4 py-4 px-4 sm:px-8 text-base sm:text-lg">
                 {navLinks.map((link) => (
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      className="hover:text-orange-600 transition-colors duration-200"
+                      className="hover:text-[#141e26] transition-colors duration-200"
                       onClick={() => setMenuOpen(false)}
                     >
                       {link.label}

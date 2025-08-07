@@ -18,7 +18,7 @@ function Home() {
         </div>
       </section>
 
-      <div className="w-full h-2 my-8 rounded-full" style={{ background: 'linear-gradient(90deg, #cbd8df, #9ac5d3, #159ab7, #1e5067)' }}></div>
+      
 
       <section className="py-20" style={{ background: '#9ac5d3', color: '#141e26' }}>
         <div className="max-w-6xl mx-auto px-6 text-center">
