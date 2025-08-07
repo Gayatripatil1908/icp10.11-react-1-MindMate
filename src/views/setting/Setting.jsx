@@ -9,7 +9,6 @@ function Setting() {
       <div className="max-w-4xl mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6">Settings</h1>
 
-        {/* Profile Section */}
         <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
           <h2 className="text-xl font-semibold mb-4">Profile</h2>
           <form className="grid gap-4">
@@ -29,7 +28,6 @@ function Setting() {
           </form>
         </section>
 
-        {/* Account Section */}
         <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
           <h2 className="text-xl font-semibold mb-4">Account</h2>
           <form className="grid gap-4">
@@ -45,7 +43,6 @@ function Setting() {
           </form>
         </section>
 
-        {/* Preferences */}
         <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
           <h2 className="text-xl font-semibold mb-4">Preferences</h2>
           <div className="flex items-center justify-between mb-4">
