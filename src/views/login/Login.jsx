@@ -9,10 +9,13 @@ import Footer from '../../components/Footer';
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
+    
+  localStorage.setItem('username', username);
 
     toast.success('Login Successfully!', {
       duration: 1500
@@ -44,12 +47,14 @@ function Login() {
             </h2>
             <form className="space-y-5" onSubmit={handleLogin}>
               <div>
-                <label className="block text-[#1e5067] font-semibold mb-1">Email</label>
+                <label className="block text-[#1e5067] font-semibold mb-1">Username</label>
                 <div className="relative">
                   <input
-                    type="email"
+                    type="text"
                     required
-                    placeholder="Enter your email"
+                    placeholder="Enter your username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     className="w-full border border-[#159ab7] rounded-md px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-[#159ab7]"
                   />
                   <UserRound className="absolute right-3 top-1/2 -translate-y-1/2 text-[#1e5067] w-5 h-5 pointer-events-none" />
