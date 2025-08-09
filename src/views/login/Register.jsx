@@ -23,9 +23,9 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className='bg-gray-100'>
       <Navbar />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2 py-10">
+      <div className="min-h-screen flex items-center justify-center px-2 py-10">
         <div className="bg-white rounded-xl shadow-lg w-full max-w-5xl md:flex overflow-hidden">
 
           <div className="hidden md:block md:w-1/2">
@@ -117,7 +117,7 @@ function Register() {
                 />
                 <label className="text-sm text-gray-700 mb-5">
                   I agree to the{' '}
-                  <a href="/terms" className="text-[#1e5067] hover:text-[#ff0000] underline">
+                  <a href="#" className="text-[#1e5067] hover:text-[#ff0000] underline">
                     Terms and Conditions
                   </a>
                 </label>

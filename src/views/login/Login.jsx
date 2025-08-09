@@ -28,9 +28,9 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className='bg-gray-100'>
       <Navbar />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="min-h-screen flex items-center justify-center px-4">
         <div className="bg-white rounded-xl shadow-lg w-full max-w-5xl md:flex overflow-hidden">
           
           <div className="hidden md:block md:w-1/2">
