@@ -12,6 +12,7 @@ import Goals from './views/goals/goals.jsx';
 
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import Setting from './views/setting/Setting.jsx';
 
 
 
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Goals" element={<Goals />} />
+        <Route path="/Settings" element={<Setting />} />
       </Routes>
 
       

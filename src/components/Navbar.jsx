@@ -13,6 +13,7 @@ function Navbar() {
     { to: '/contact', label: 'Contact' },
     { to: '/dashboard', label: 'Dashboard' },
     { to: '/goals', label: 'Goals' },
+    { to: '/setting', label: 'Setting' },
     { to: '/login', label: 'Login' },
   ];
 

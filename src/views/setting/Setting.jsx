@@ -5,6 +5,7 @@ function Setting() {
   const [notifications, setNotifications] = useState(true);
 
   return (
+    
     <div className={darkMode ? "bg-gray-900 text-white min-h-screen" : "bg-gray-100 text-gray-900 min-h-screen"}>
       <div className="max-w-4xl mx-auto p-6">
         <h1 className="text-3xl font-bold mb-6">Settings</h1>
