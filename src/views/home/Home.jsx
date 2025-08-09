@@ -2,6 +2,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
+import Button from '../../components/Button.jsx';
 function Home() {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #cbd8df 0%, #9ac5d3 40%, #159ab7 70%, #1e5067 90%, #141e26 100%)' }}>
@@ -12,7 +13,7 @@ function Home() {
           <h1 className="text-5xl font-extrabold mb-6" style={{ color: '#159ab7' }}>Your Personal AI Mental Wellness Companion</h1>
           <p className="text-xl mb-8">Track your mood, journal your thoughts, and talk to your AI friend — all in one place.</p>
           <div className="space-x-4">
-            <button style={{ background: 'linear-gradient(90deg, #159ab7, #9ac5d3)', color: '#fff', boxShadow: '0 2px 8px #159ab780' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300">Get Started</button>
+            <Button title="Get Started" />
             <button style={{ background: '#141e26', color: '#cbd8df', border: '2px solid #1e5067', boxShadow: '0 2px 8px #141e2680' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300">Learn More</button>
           </div>
         </div>
