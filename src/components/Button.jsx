@@ -1,8 +1,15 @@
 import React from 'react'
 
-function Button({title}) {
+function Button({ title }) {
   return (
-    <button style={{ background: 'linear-gradient(90deg, #159ab7, #9ac5d3)', color: '#fff', boxShadow: '0 2px 8px #159ab780' }} className="px-8 py-4 rounded-full cursor-pointer font-bold transition-all duration-300">{title}</button>
+    <button
+      className="px-8 py-4 rounded-full cursor-pointer font-bold text-white
+                 bg-gradient-to-r from-[#159ab7] to-[#9ac5d3]
+                 transition-transform duration-200 ease-out
+                 hover:scale-105 active:scale-95"
+    >
+      {title}
+    </button>
   )
 }
 

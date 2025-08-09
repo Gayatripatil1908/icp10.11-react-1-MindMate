@@ -82,11 +82,6 @@ function Login() {
               </div>
 
               <div className="flex justify-center">
-                {/* <button
-                  type="submit"
-                  className="bg-[#1e5067] cursor-pointer text-white font-semibold w-full py-2 mb-4 rounded-md hover:bg-[#159ab7] transition"
-                >Login
-                </button> */}
                 <Button title="Login" />
               </div>
             </form>
