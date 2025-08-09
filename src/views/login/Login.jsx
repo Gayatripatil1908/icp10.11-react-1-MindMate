@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar.jsx';
 import { Toaster, toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer.jsx';
+import Button from '../../components/Button.jsx';
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -81,11 +82,12 @@ function Login() {
               </div>
 
               <div className="flex justify-center">
-                <button
+                {/* <button
                   type="submit"
                   className="bg-[#1e5067] cursor-pointer text-white font-semibold w-full py-2 mb-4 rounded-md hover:bg-[#159ab7] transition"
                 >Login
-                </button>
+                </button> */}
+                <Button title="Login" />
               </div>
             </form>
 

@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
-    { to: '/Home', label: 'Home' },
+    { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
     { to: '/dashboard', label: 'Dashboard' },
