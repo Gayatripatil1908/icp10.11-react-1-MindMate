@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import registerImage from '../../assets/Register.png';
 import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
+import Button from '../../components/Button.jsx';
 
 function Register() {
   const navigate = useNavigate();
@@ -22,9 +23,9 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className='bg-gray-100'>
       <Navbar />
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 px-2 py-10">
+      <div className="min-h-screen flex items-center justify-center px-2 py-10">
         <div className="bg-white rounded-xl shadow-lg w-full max-w-5xl md:flex overflow-hidden">
 
           <div className="hidden md:block md:w-1/2">
@@ -116,23 +117,18 @@ function Register() {
                 />
                 <label className="text-sm text-gray-700 mb-5">
                   I agree to the{' '}
-                  <a href="/terms" className="text-[#1e5067] hover:text-[#ff0000] underline">
+                  <a href="#" className="text-[#1e5067] hover:text-[#ff0000] underline">
                     Terms and Conditions
                   </a>
                 </label>
               </div>
 
-              <div className="flex justify-center">
-                <button
-                  type="submit"
-                  className="bg-[#1e5067] cursor-pointer text-white font-semibold w-full py-2 mb-4 rounded-md hover:bg-[#159ab7] transition"
-                >
-                  Register
-                </button>
+              <div className="flex justify-center !w-full">
+                <Button title="Register" />
               </div>
             </form>
 
-            <p className="mt-4 text-center text-sm text-gray-600">
+            <p className="mt-7 text-center text-sm text-gray-600">
               Already have an account?{' '}
               <a href="/login" className="text-[#159ab7] hover:text-[#ff0000] font-medium">
                 Login here
