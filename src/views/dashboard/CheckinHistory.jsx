@@ -5,17 +5,27 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import emptyFolder from "../../assets/empty-folder.png"
 import CheckinCard from "../../components/CheckinHistory";
+import Swal from "sweetalert2";
 
 function CheckinHistory() {
   const storedCheckins = JSON.parse(localStorage.getItem("checkins")) || [];
   const [checkins, setCheckins] = useState(storedCheckins);
 
   const handleDelete = (index) => {
-    const updated = [...checkins];
-    updated.splice(index, 1);
-    localStorage.setItem("checkins", JSON.stringify(updated));
-    setCheckins(updated);
-  };
+  const updated = [...checkins];
+  updated.splice(index, 1);
+  localStorage.setItem("checkins", JSON.stringify(updated));
+  setCheckins(updated);
+
+  if (updated.length === 0) {
+    Swal.fire({
+      icon: "info",
+      title: "All check-ins deleted",
+      text: "Your check-in history is now empty.",
+      confirmButtonColor: "#159ab7",
+    });
+  }
+};
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
