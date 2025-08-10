@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './views/home/Home.jsx';
 import About from './views/about/About.jsx';
-import Contact from './views/contact/Contact.jsx';
 import Dashboard from './views/dashboard/Dashboard.jsx';
 import Login from './views/login/Login.jsx';
 import Register from './views/login/Register.jsx';
@@ -25,7 +24,6 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/checkin-history" element={<CheckInHistory />} />
         <Route path="/Login" element={<Login />} />
