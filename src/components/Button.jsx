@@ -1,8 +1,9 @@
 import React from 'react'
 
-function Button({ title }) {
+function Button({ title, onClick }) {
   return (
     <button
+      onClick={onClick}
       className="px-8 py-4 rounded-full cursor-pointer font-bold text-white
                  bg-gradient-to-r from-[#159ab7] to-[#9ac5d3]
                  transition-transform duration-200 ease-out
@@ -12,5 +13,4 @@ function Button({ title }) {
     </button>
   )
 }
-
 export default Button;
