@@ -14,7 +14,8 @@ function Home() {
           <p className="text-xl mb-8">Track your mood, journal your thoughts, and talk to your AI friend — all in one place.</p>
           <div className="space-x-4">
             <Button title="Get Started" />
-            <button style={{ background: '#141e26', color: '#cbd8df', border: '2px solid #1e5067', boxShadow: '0 2px 8px #141e2680' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300">Learn More</button>
+            <button style={{ background: '#141e26', color: '#cbd8df', border: '2px solid #1e5067', boxShadow: '0 2px 8px #141e2680' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300 transition-transform duration-200 ease-out
+                 hover:scale-105 active:scale-95">Learn More</button>
           </div>
         </div>
       </section>
@@ -50,7 +51,8 @@ function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-extrabold mb-6" style={{ color: '#9ac5d3' }}>Start Your Mental Wellness Journey Today</h2>
           <p className="mb-8 text-lg">It's free, private, and designed with care.</p>
-          <button style={{ background: '#141e26', color: '#cbd8df', boxShadow: '0 2px 8px #1e506780' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300">Get Started</button>
+          <button style={{ background: '#141e26', color: '#cbd8df', boxShadow: '0 2px 8px #1e506780' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300 transition-transform duration-200 ease-out
+                 hover:scale-105 active:scale-95">Get Started</button>
         </div>
       </section>
 
