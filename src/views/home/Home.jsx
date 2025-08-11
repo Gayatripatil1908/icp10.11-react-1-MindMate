@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
 import Button from '../../components/Button.jsx';
+import {Facebook, Twitter, Instagram} from 'lucide-react';
 function Home() {
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #cbd8df 0%, #9ac5d3 40%, #159ab7 70%, #1e5067 90%, #141e26 100%)' }}>
@@ -107,13 +108,13 @@ function Home() {
           <h2 className="text-2xl font-extrabold mb-6" style={{ color: '#159ab7' }}>Connect with us</h2>
           <div className="flex justify-center space-x-8">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={{ color: '#9ac5d3' }} className="text-3xl transition-transform duration-300 hover:scale-125">
-              <span role="img" aria-label="Facebook">📘</span>
+              <span role="img" aria-label="Facebook"><Facebook/></span>
             </a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" style={{ color: '#159ab7' }} className="text-3xl transition-transform duration-300 hover:scale-125">
-              <span role="img" aria-label="Twitter">🐦</span>
+              <span role="img" aria-label="Twitter"><Twitter/></span>
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={{ color: '#1e5067' }} className="text-3xl transition-transform duration-300 hover:scale-125">
-              <span role="img" aria-label="Instagram">📸</span>
+              <span role="img" aria-label="Instagram"><Instagram/></span>
             </a>
           </div>
         </div>
