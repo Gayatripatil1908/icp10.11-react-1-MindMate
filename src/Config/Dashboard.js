@@ -23,7 +23,7 @@ const healthList = [
   { name: "Headache", icon: "🤕" },
   { name: "Fatigue", icon: "🥱" },
   { name: "Nausea", icon: "🤢" },
-  { name: "Pain", icon: "🤕" },
+  { name: "Pain", icon: "🤒" },
   { name: "Healthy", icon: "💪" },
 ];
 

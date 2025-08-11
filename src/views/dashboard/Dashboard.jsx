@@ -82,8 +82,8 @@ function Dashboard() {
 
       <Toaster />
 
-      <div className="p-6 sm:mx-6 md:mx-12 rounded-xl shadow-lg mb-8 mt-7 bg-white max-w-7xl mx-auto">
-        <div className="mb-8">
+      <div className="flex-1 flex items-center justify-center p-4 mt-10">
+        <div className="p-6 sm:mx-6 md:mx-12 rounded-xl shadow-lg bg-white max-w-7xl w-full">
           <h2 className="text-xl sm:text-2xl font-semibold mb-4 text-[#1e5067] border-b-2 border-[#159ab7] pb-2">
             Hello{" "}
             <span className="text-orange-500 font-bold text-2xl sm:text-3xl">
