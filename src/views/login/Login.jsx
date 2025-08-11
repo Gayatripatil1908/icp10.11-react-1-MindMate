@@ -97,21 +97,18 @@ function Login() {
               <a
                 href="https://www.facebook.com/"
                 className="text-[#3b5998] transition-transform duration-300 hover:scale-125"
-                title="Login with Facebook"
               >
                 <FaFacebook />
               </a>
               <a
                 href="https://www.google.com/"
                 className="text-[#DB4437] transition-transform duration-300 hover:scale-125"
-                title="Login with Google"
               >
                 <FaGoogle />
               </a>
               <a
                 href="https://www.microsoft.com/en-in/"
                 className="text-[#76c7ed] transition-transform duration-300 hover:scale-125"
-                title="Login with Microsoft"
               >
                 <FaMicrosoft />
               </a>
