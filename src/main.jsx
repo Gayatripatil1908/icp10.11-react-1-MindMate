@@ -27,7 +27,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Dashboard" element={<Dashboard />} />
         <Route path="/checkin-history" element={<CheckInHistory />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="Register" element={<Register/>} />
+        <Route path="/Register" element={<Register/>} />
         <Route path="/Goals" element={<Goals />} />
         <Route path="/Setting" element={<Setting />} />
       </Routes>
