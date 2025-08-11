@@ -88,7 +88,7 @@ function Login() {
 
             <p className="mt-4 text-center text-sm text-gray-600">
               Don't have an account?{' '}
-              <a href="/register" className="text-[#159ab7] hover:text-[#ff0000] font-medium">
+              <a href="/Register" className="text-[#159ab7] hover:text-[#ff0000] font-medium">
                 Register here
               </a>
             </p>
