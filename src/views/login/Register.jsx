@@ -31,7 +31,6 @@ function Register() {
           <div className="hidden md:block md:w-1/2">
             <img
               src={registerImage}
-              alt="Register"
               className="w-full h-full object-cover"
             />
           </div>
