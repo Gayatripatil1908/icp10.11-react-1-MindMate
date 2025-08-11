@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar.jsx";
 import Footer from "../../components/Footer.jsx";
+import Button from "../../components/Button.jsx"; // ✅ Import custom button
 
 function Goals() {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,6 +34,14 @@ function Goals() {
     setGoals(goals.filter((_, i) => i !== index));
   };
 
+  const sectionClass = darkMode
+    ? "bg-gray-800 text-white"
+    : "bg-white text-gray-900";
+
+  const inputClass = darkMode
+    ? "bg-gray-700 text-white border-gray-600"
+    : "bg-white text-gray-900 border-gray-300";
+
   return (
     <div
       className={
@@ -44,9 +53,13 @@ function Goals() {
       <Navbar />
 
       <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6">🎯 Goals & Habits Tracker</h1>
-        
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+        {/* Page Title */}
+        <h1 className={`text-3xl font-bold mb-6 ${darkMode ? "text-white" : "text-gray-900"}`}>
+          🎯 Goals & Habits Tracker
+        </h1>
+
+        {/* Add Goal Section */}
+        <section className={`rounded-lg shadow-md p-6 mb-6 ${sectionClass}`}>
           <h2 className="text-xl font-semibold mb-4">Add New Goal</h2>
           <div className="grid gap-4 sm:grid-cols-4">
             <input
@@ -54,58 +67,66 @@ function Goals() {
               value={goalText}
               onChange={(e) => setGoalText(e.target.value)}
               placeholder="Enter your goal..."
-              className="border rounded-md px-3 py-2 col-span-2"
+              className={`border rounded-md px-3 py-2 col-span-2 ${inputClass}`}
             />
             <input
               type="time"
               value={reminder}
               onChange={(e) => setReminder(e.target.value)}
-              className="border rounded-md px-3 py-2"
+              className={`border rounded-md px-3 py-2 ${inputClass}`}
             />
             <select
               value={priority}
               onChange={(e) => setPriority(e.target.value)}
-              className="border rounded-md px-3 py-2"
+              className={`border rounded-md px-3 py-2 ${inputClass}`}
             >
               <option>Low</option>
               <option>Medium</option>
               <option>High</option>
             </select>
           </div>
-          <button
-            onClick={addGoal}
-            className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            + Add Goal
-          </button>
+          <div className="mt-4">
+            <Button title="+ Add Goal" onClick={addGoal} />
+          </div>
         </section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+        {/* Goals List */}
+        <section className={`rounded-lg shadow-md p-6 mb-6 ${sectionClass}`}>
           <h2 className="text-xl font-semibold mb-4">Your Goals</h2>
           {goals.length === 0 ? (
-            <p className="text-gray-500">No goals added yet.</p>
+            <p className={darkMode ? "text-gray-400" : "text-gray-500"}>
+              No goals added yet.
+            </p>
           ) : (
             <ul className="space-y-4">
               {goals.map((goal, index) => (
                 <li
                   key={index}
-                  className="flex items-center justify-between border-b pb-2"
+                  className={`flex items-center justify-between border-b pb-2 ${
+                    darkMode ? "border-gray-700" : "border-gray-300"
+                  }`}
                 >
                   <div>
                     <p
                       className={
                         goal.done
-                          ? "line-through text-gray-500"
+                          ? darkMode
+                            ? "line-through text-gray-400"
+                            : "line-through text-gray-500"
                           : "text-lg font-medium"
                       }
                     >
                       {goal.text}{" "}
-                      <span className="text-sm text-gray-400">
+                      <span
+                        className={darkMode ? "text-gray-400" : "text-gray-500"}
+                      >
                         ({goal.priority} priority)
                       </span>
                     </p>
                     {goal.reminder && (
-                      <p className="text-sm text-gray-400">
+                      <p
+                        className={darkMode ? "text-gray-400" : "text-gray-500"}
+                      >
                         ⏰ Reminder: {goal.reminder}
                       </p>
                     )}
@@ -114,18 +135,15 @@ function Goals() {
                     </p>
                   </div>
                   <div className="flex gap-2">
-                    <button
+                    <Button
+                      title={goal.done ? "Undo" : "Done"}
                       onClick={() => toggleDone(index)}
-                      className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
-                    >
-                      {goal.done ? "Undo" : "Done"}
-                    </button>
-                    <button
+                    />
+                    <Button
+                      title="Delete"
                       onClick={() => deleteGoal(index)}
-                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
-                    >
-                      Delete
-                    </button>
+                      className="bg-gradient-to-r from-[#159ab7] to-[#9ac5d3]"
+                    />
                   </div>
                 </li>
               ))}
@@ -133,16 +151,15 @@ function Goals() {
           )}
         </section>
 
-        <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        {/* Preferences */}
+        <section className={`rounded-lg shadow-md p-6 ${sectionClass}`}>
           <h2 className="text-xl font-semibold mb-4">Preferences</h2>
           <div className="flex items-center justify-between">
             <span className="font-medium">Dark Mode</span>
-            <button
+            <Button
+              title={darkMode ? "Light" : "Dark"}
               onClick={() => setDarkMode(!darkMode)}
-              className="bg-gray-300 dark:bg-gray-700 px-3 py-1 rounded"
-            >
-              {darkMode ? "Light" : "Dark"}
-            </button>
+            />
           </div>
         </section>
       </div>
