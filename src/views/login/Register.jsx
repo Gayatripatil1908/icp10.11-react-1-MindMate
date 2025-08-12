@@ -1,6 +1,6 @@
 import { UserRoundPlus } from 'lucide-react';
 import { toast, Toaster } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import registerImage from '../../assets/Register.png';
 import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
@@ -31,7 +31,6 @@ function Register() {
           <div className="hidden md:block md:w-1/2">
             <img
               src={registerImage}
-              alt="Register"
               className="w-full h-full object-cover"
             />
           </div>
@@ -129,10 +128,13 @@ function Register() {
             </form>
 
             <p className="mt-7 text-center text-sm text-gray-600">
-              Already have an account?{' '}
-              <a href="/login" className="text-[#159ab7] hover:text-[#ff0000] font-medium">
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="text-[#159ab7] hover:text-[#ff0000] font-medium"
+              >
                 Login here
-              </a>
+              </Link>
             </p>
           </div>
         </div>
