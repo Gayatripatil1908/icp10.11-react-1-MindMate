@@ -50,7 +50,12 @@ const About = () => {
           </ul>
         </section>
 
-        
+        <section className="cta-section">
+          <p>
+            Ready to begin your journey toward better mental wellness?
+          </p>
+          <button className="cta-button">Get Started</button>
+        </section>
       </div>
     </>
   );
