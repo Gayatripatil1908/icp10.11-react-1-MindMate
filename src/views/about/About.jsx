@@ -30,7 +30,16 @@ const About = () => {
           </ul>
         </section>
 
-       
+        <section className="about-section">
+          <h2>💜 Why Choose MindMate?</h2>
+          <p>
+            Unlike traditional mood tracker apps, MindMate uses AI to provide
+            gentle insights and personalized affirmations. It’s designed with a
+            calm, minimal interface to make tracking your emotions feel effortless —
+            not like a chore.
+          </p>
+        </section>
+
       </div>
     </>
   );
