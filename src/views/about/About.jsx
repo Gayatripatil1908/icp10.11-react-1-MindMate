@@ -40,6 +40,17 @@ const About = () => {
           </p>
         </section>
 
+        <section className="about-section">
+          <h2>🤝 Our Promise</h2>
+          <ul>
+            <li>100% Data Privacy – No third-party sharing.</li>
+            <li>AI that listens, not judges.</li>
+            <li>Simple and user-friendly design.</li>
+            <li>Accessible to everyone, free to start.</li>
+          </ul>
+        </section>
+
+        
       </div>
     </>
   );
