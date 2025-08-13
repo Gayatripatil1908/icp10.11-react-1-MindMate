@@ -19,6 +19,17 @@ const About = () => {
           </p>
         </section>
 
+        <section className="about-section">
+          <h2>💡 What We Offer</h2>
+          <ul>
+            <li>🤖 AI Chat Support – A friendly AI companion to listen and guide you.</li>
+            <li>📈 Mood Tracking – Understand your emotional patterns over time.</li>
+            <li>📓 Smart Journaling – Express your thoughts and get meaningful reflections.</li>
+            <li>📊 Mood Trends – Visual graphs and insights into your mental well-being.</li>
+            <li>🔒 Privacy First – Your data stays yours, always.</li>
+          </ul>
+        </section>
+
        
       </div>
     </>
