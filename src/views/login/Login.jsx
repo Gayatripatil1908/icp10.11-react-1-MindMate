@@ -4,7 +4,7 @@ import { FaGoogle, FaFacebook, FaMicrosoft } from 'react-icons/fa';
 import loginImage from '../../assets/Login.png';
 import Navbar from '../../components/Navbar.jsx';
 import { Toaster, toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer.jsx';
 import Button from '../../components/Button.jsx';
 
@@ -88,30 +88,27 @@ function Login() {
 
             <p className="mt-4 text-center text-sm text-gray-600">
               Don't have an account?{' '}
-              <a href="/register" className="text-[#159ab7] hover:text-[#ff0000] font-medium">
+              <Link to="/register" className="text-[#159ab7] hover:text-[#ff0000] font-medium">
                 Register here
-              </a>
+              </Link>
             </p>
 
             <div className="mt-6 flex justify-center gap-6 text-2xl">
               <a
                 href="https://www.facebook.com/"
                 className="text-[#3b5998] transition-transform duration-300 hover:scale-125"
-                title="Login with Facebook"
               >
                 <FaFacebook />
               </a>
               <a
                 href="https://www.google.com/"
                 className="text-[#DB4437] transition-transform duration-300 hover:scale-125"
-                title="Login with Google"
               >
                 <FaGoogle />
               </a>
               <a
                 href="https://www.microsoft.com/en-in/"
                 className="text-[#76c7ed] transition-transform duration-300 hover:scale-125"
-                title="Login with Microsoft"
               >
                 <FaMicrosoft />
               </a>
