@@ -36,3 +36,7 @@
     transition:  transform 250ms ease-in-out;
 }
 
+.toggle:checked + label::after {
+    transform: translateX(1em);
+    background-color: rgb(31, 31, 31);
+}
