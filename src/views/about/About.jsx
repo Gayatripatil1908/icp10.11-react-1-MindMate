@@ -68,6 +68,13 @@ const About = () => {
           </ul>
         </section>
 
+        {/* OUR TEAM — 3 cards per row like your screenshot */}
+        <section className="about-section team">
+          <h2> Our Team </h2>
+          <p className="team-sub">We’re a small crew built MindMate.</p>
+
+          
+        </section>
       </div>
     </>
   );
