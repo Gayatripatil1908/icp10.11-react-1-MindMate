@@ -73,7 +73,16 @@ const About = () => {
           <h2> Our Team </h2>
           <p className="team-sub">We’re a small crew built MindMate.</p>
 
-          
+          <div className="team-grid">
+            {team.map((m) => (
+              <div className="team-card" key={m.name}>
+                <div className="avatar-wrap">
+                  <img src={m.img} alt={m.name} className="avatar" />
+                </div>
+                <h3 className="member-name">{m.name}</h3>
+              </div>
+            ))}
+          </div>
         </section>
       </div>
     </>
