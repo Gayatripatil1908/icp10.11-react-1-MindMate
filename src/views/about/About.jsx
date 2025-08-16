@@ -1,11 +1,29 @@
 import React from "react";
 import "./About.css";
-import Navbar from "../../components/Navbar"; // Ensure the same Navbar component is imported
+import Navbar from "../../components/Navbar";
+
+import Gayatri from "../../assets/Gayatri.jpg";
+import Samarth from "../../assets/Samarth.jpg";
+import Shreya from "../../assets/Shreya.jpg";
+import Ganesh from "../../assets/Ganesh.jpg";
+import Prayag from "../../assets/Prayag.jpg";
+import Shravani from "../../assets/Shravani.jpg";
+
 
 const About = () => {
+  const team = [
+    { name: "Gayatri", img: Gayatri },
+    { name: "Samarth", img: Samarth },
+    { name: "Shreya",  img: Shreya },
+    { name: "Shravani", img: Shravani },
+    { name: "Ganesh", img: Ganesh },
+    { name: "Prayag",  img: Prayag },
+  ];
+
   return (
     <>
       <Navbar />
+
       <div className="about-container">
     
         <section className="about-section">
@@ -15,7 +33,7 @@ const About = () => {
             physical health. Our mission is to make mental wellness accessible,
             private, and easy for everyone. By combining mood tracking,
             journaling, and AI-powered conversations, we help you build a deeper
-            connection with yourself — one day at a time.
+            connection with yourself one day at a time.
           </p>
         </section>
 
@@ -31,7 +49,7 @@ const About = () => {
         </section>
 
         <section className="about-section">
-          <h2>💜 Why Choose MindMate?</h2>
+          <h2>❣️ Why Choose MindMate?</h2>
           <p>
             Unlike traditional mood tracker apps, MindMate uses AI to provide
             gentle insights and personalized affirmations. It’s designed with a
@@ -50,15 +68,8 @@ const About = () => {
           </ul>
         </section>
 
-        <section className="cta-section">
-          <p>
-            Ready to begin your journey toward better mental wellness?
-          </p>
-          <button className="cta-button">Get Started</button>
-        </section>
       </div>
     </>
   );
-};
-
+}
 export default About;
