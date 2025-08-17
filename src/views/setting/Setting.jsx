@@ -13,7 +13,7 @@ function Setting() {
     <div className={darkMode ? "bg-gray-900 text-white min-h-screen" : "bg-gray-100 text-gray-100 min-h-screen"}>
       <Navbar />
       <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6">Settings</h1>
+        <h1 className={darkMode ? "text-white text-3xl font-bold mb-6":"text-gray-800 text-3xl font-bold mb-6" }>Settings</h1>
 
         <section className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
           <h2 className="text-xl font-semibold mb-4">Profile</h2>
@@ -53,10 +53,10 @@ function Setting() {
           <h2 className="text-xl font-semibold mb-4">Preferences</h2>
           <div className="flex items-center justify-between mb-4">
             <span className="font-medium">Enable Notifications</span>            
-             <input type="checkbox" onClick={()=> setNotifications(!notifications)} />
+            <button onClick={()=>setNotifications(!notifications)} className={`px-5 py-2 text-xs text-white ${notifications === true ? "bg-green-600":"bg-red-600"}  font-semibold rounded`}>{notifications === true? "Enable":"Disable"}</button>
           </div>
           <div className="flex items-center justify-between bg-gray-800" >
-            <span className="font-medium">Dark Mode</span>
+            <span className="font-medium">Dark Mode </span>
             <Toggle ischecked={darkMode} handlechange={()=> setDarkMode(!darkMode)} />   
           </div>
         </section>
