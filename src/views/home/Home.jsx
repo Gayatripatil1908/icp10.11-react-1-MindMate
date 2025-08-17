@@ -1,10 +1,15 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar.jsx';
 import Footer from '../../components/Footer.jsx';
 import Button from '../../components/Button.jsx';
 import {Facebook, Twitter, Instagram} from 'lucide-react';
 function Home() {
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    navigate('/login');
+  };
   return (
     <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, #cbd8df 0%, #9ac5d3 40%, #159ab7 70%, #1e5067 90%, #141e26 100%)' }}>
       <Navbar />
@@ -14,7 +19,7 @@ function Home() {
           <h1 className="text-5xl font-extrabold mb-6" style={{ color: '#159ab7' }}>Your Personal AI Mental Wellness Companion</h1>
           <p className="text-xl mb-8">Track your mood, journal your thoughts, and talk to your AI friend — all in one place.</p>
           <div className="space-x-4">
-            <Button title="Get Started" />
+            <Button title="Get Started" onClick={handleGetStarted}/>
             <button style={{ background: '#141e26', color: '#cbd8df', border: '2px solid #1e5067', boxShadow: '0 2px 8px #141e2680' }} className="px-8 py-4 rounded-full font-bold transition-all duration-300 transition-transform duration-200 ease-out
                  hover:scale-105 active:scale-95">Learn More</button>
           </div>

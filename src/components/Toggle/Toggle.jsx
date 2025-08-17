@@ -16,4 +16,4 @@ function Toggle({handlechange, ischecked }) {
   )
 }
 
-export default Toggle
+export default Toggle;

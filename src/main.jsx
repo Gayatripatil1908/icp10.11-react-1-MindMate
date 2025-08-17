@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './views/home/Home.jsx';
 import About from './views/about/About.jsx';
-import Dashboard from './views/dashboard/Dashboard.jsx';
 import Login from './views/login/Login.jsx';
 import Register from './views/login/Register.jsx';
 import Goals from './views/goals/goals.jsx';
@@ -13,7 +12,7 @@ import Goals from './views/goals/goals.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Setting from './views/setting/Setting.jsx';
-import CheckInHistory from './views/dashboard/CheckinHistory.jsx';
+import CheckinHistory from './views/dashboard/CheckinHistory.jsx';
 
 
 
@@ -24,8 +23,9 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/checkin-history" element={<CheckInHistory />} />
+        <Route path="/dashboard" element={<CheckinHistory />} />
+        
+        
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register/>} />
         <Route path="/Goals" element={<Goals />} />

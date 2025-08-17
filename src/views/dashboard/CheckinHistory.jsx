@@ -65,14 +65,14 @@ function CheckinHistory() {
         )}
 
         <div className="flex justify-center mt-10 mb-[-20px]">
-          <Link
-            to="/dashboard"
-            className="border border-[#1e5067] text-[#1e5067] hover:text-[#a71c1c] hover:border-[#a71c1c] transition
-              rounded-lg px-4 py-2 sm:px-6 sm:py-3 font-medium bg-white shadow-sm flex items-center gap-1 sm:gap-2 text-sm sm:text-base"
-          >
-            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            Back to Dashboard
-          </Link>
+            <Link
+              to="/dashboard"
+              className="border border-[#1e5067] text-[#1e5067] hover:text-[#a71c1c] hover:border-[#a71c1c] transition
+                rounded-lg px-4 py-2 sm:px-6 sm:py-3 font-medium bg-white shadow-sm flex items-center gap-1 sm:gap-2 text-sm sm:text-base"
+            >
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              Back to Mood Tracker
+            </Link>
         </div>
       </div>
       <Footer />

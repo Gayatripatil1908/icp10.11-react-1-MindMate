@@ -1,6 +1,7 @@
 import React from "react";
 import "./About.css";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar.jsx";
+import Footer from "../../components/Footer.jsx";
 
 import Gayatri from "../../assets/Gayatri.jpg";
 import Samarth from "../../assets/Samarth.jpg";
@@ -68,7 +69,7 @@ const About = () => {
           </ul>
         </section>
 
-        {/* OUR TEAM — 3 cards per row like your screenshot */}
+        
         <section className="about-section team">
           <h2> Our Team </h2>
           <p className="team-sub">We’re a small crew built MindMate.</p>
@@ -84,7 +85,9 @@ const About = () => {
             ))}
           </div>
         </section>
+        
       </div>
+      <Footer />
     </>
   );
 }
