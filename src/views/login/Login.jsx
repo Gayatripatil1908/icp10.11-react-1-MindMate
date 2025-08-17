@@ -23,7 +23,7 @@ function Login() {
     });
 
     setTimeout(() => {
-      navigate('/dashboard');
+      navigate('/mood-tracker');
     }, 1600);
   };
 

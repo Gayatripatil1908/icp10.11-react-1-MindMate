@@ -73,7 +73,7 @@ function Dashboard() {
     localStorage.setItem("checkins", JSON.stringify(existingCheckins));
 
     toast.success("Check-in saved!");
-    navigate("/checkin-history");
+    navigate("/dashboard");
   };
 
   return (
@@ -113,7 +113,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Sleep */}
           <div className="mb-4">
             <label className="block mb-2 font-medium text-[#1e5067]">
               Hours of Sleep Last Night
@@ -129,7 +128,6 @@ function Dashboard() {
             hrs
           </div>
 
-          {/* Activities */}
           <div className="mb-4">
             <label className="block mb-2 font-medium text-[#1e5067]">
               What activities did you do today?
@@ -158,7 +156,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Stress & Energy */}
           <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label className="block mb-1 font-medium text-[#1e5067]">
@@ -234,7 +231,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Habit Reminders */}
           <div className="mb-8">
             <h2 className="text-xl font-semibold mb-6 text-[#1e5067] border-b-2 border-[#159ab7] pb-2">
               Habit Reminders
@@ -268,7 +264,6 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Notes */}
           <div className="mb-6">
             <label className="block mb-2 font-medium text-[#1e5067]">
               Notes (Optional)
