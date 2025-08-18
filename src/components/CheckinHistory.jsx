@@ -60,12 +60,18 @@ function CheckinCard({ entry, onDelete, index }) {
 
         <p className="flex items-center gap-2">
           <Wind size={18} className="text-[#5c1ec8]" />
-          <span className="font-medium">Weather:</span> {entry.weather}
+          <span className="font-medium">Weather:</span>
+          <span>
+            {entry.weather.name} {entry.weather.icon}
+          </span>
         </p>
 
         <p className="flex items-center gap-2">
           <Heart size={18} className="text-red-500" />
-          <span className="font-medium">Health:</span> {entry.health}
+          <span className="font-medium">Health:</span>
+          <span>
+            {entry.health.name} {entry.health.icon}
+          </span>
         </p>
 
         <p className="flex items-start gap-2">

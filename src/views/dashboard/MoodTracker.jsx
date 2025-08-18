@@ -20,8 +20,8 @@ function Dashboard() {
   const [selectedActivities, setSelectedActivities] = useState([]);
   const [stress, setStress] = useState(3);
   const [energy, setEnergy] = useState(3);
-  const [weather, setWeather] = useState("☀️");
-  const [health, setHealth] = useState("💪");
+  const [weather, setWeather] = useState(weatherList[0]); 
+  const [health, setHealth] = useState(healthList[0]);    
   const [notes, setNotes] = useState("");
   const [doneHabits, setDoneHabits] = useState([]);
 
@@ -60,8 +60,8 @@ function Dashboard() {
       selectedActivities,
       stress,
       energy,
-      weather,
-      health,
+      weather: weather, 
+      health: health, 
       notes,
       doneHabits,
       date: new Date().toLocaleString(),
@@ -195,9 +195,9 @@ function Dashboard() {
                 {weatherList.map((w) => (
                   <button
                     key={w.name}
-                    onClick={() => setWeather(w.icon)}
+                    onClick={() => setWeather(w)}
                     className={`p-3 rounded-lg cursor-pointer ${
-                      weather === w.icon
+                      weather.name === w.name
                         ? "bg-gradient-to-r from-[#159ab7] to-[#9ac5d3]"
                         : "bg-gray-200 border border-gray-300"
                     } hover:bg-[#159ab7] hover:text-white transition`}
@@ -217,9 +217,9 @@ function Dashboard() {
                 {healthList.map((h) => (
                   <button
                     key={h.name}
-                    onClick={() => setHealth(h.icon)}
+                    onClick={() => setHealth(h)}
                     className={`p-3 rounded-lg cursor-pointer ${
-                      health === h.icon
+                      health.name === h.name
                         ? "bg-gradient-to-r from-[#159ab7] to-[#9ac5d3]"
                         : "bg-gray-200 border border-gray-300"
                     } hover:bg-[#159ab7] hover:text-white transition`}
