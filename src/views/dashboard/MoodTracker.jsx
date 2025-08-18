@@ -92,12 +92,12 @@ function Dashboard() {
             , how are you feeling today?
           </h2>
 
-          <div className="mb-4">
+          <div className="mb-7">
             <label className="block mb-2 font-medium text-[#1e5067]">
               Select your mood
             </label>
             <div className="flex gap-3 flex-wrap">
-              {["😊", "😔", "😟", "😠", "😐"].map((emoji) => (
+              {["😊", "😔", "😟", "😡", "😴"].map((emoji) => (
                 <button
                   key={emoji}
                   onClick={() => setMood(emoji)}
@@ -113,7 +113,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="mb-4">
+          <div className="mb-7">
             <label className="block mb-2 font-medium text-[#1e5067]">
               Hours of Sleep Last Night
             </label>
@@ -128,7 +128,7 @@ function Dashboard() {
             hrs
           </div>
 
-          <div className="mb-4">
+          <div className="mb-7">
             <label className="block mb-2 font-medium text-[#1e5067]">
               What activities did you do today?
             </label>
@@ -156,7 +156,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label className="block mb-1 font-medium text-[#1e5067]">
                 Stress Level
@@ -185,7 +185,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="mb-4 flex flex-col sm:flex-row gap-6">
+          <div className="mb-7 flex flex-col sm:flex-row gap-6">
             {/* Weather */}
             <div className="flex-1">
               <label className="block mb-2 font-medium text-[#1e5067]">
@@ -209,7 +209,7 @@ function Dashboard() {
             </div>
 
             {/* Physical Health */}
-            <div className="flex-1">
+            <div className="flex-1 mb-5">
               <label className="block mb-2 font-medium text-[#1e5067]">
                 Physical Health
               </label>
@@ -231,7 +231,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="mb-8">
+          <div className="mb-10">
             <h2 className="text-xl font-semibold mb-6 text-[#1e5067] border-b-2 border-[#159ab7] pb-2">
               Habit Reminders
             </h2>
