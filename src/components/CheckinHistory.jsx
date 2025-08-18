@@ -24,7 +24,7 @@ function CheckinCard({ entry, onDelete, index }) {
 
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#159ab7]/10 to-transparent pointer-events-none"></div>
 
-      <p className="text-lg font-semibold text-[#1e5067] mb-4 flex items-center gap-2">
+      <p className="text-lg font-bold text-[#1e5067] mb-4 flex items-center gap-2">
         <Calendar size={20} />
         <span className="tracking-wide">{entry.date}</span>
       </p>
