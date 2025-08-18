@@ -8,6 +8,7 @@ import Button from '../../components/Button.jsx';
 
 function Register() {
   const navigate = useNavigate();
+  
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -43,7 +44,9 @@ function Register() {
 
             <form className="space-y-5" onSubmit={handleRegister}>
               <div>
-                <label className="block text-[#1e5067] font-semibold mb-1">First Name</label>
+                <label className="block text-[#1e5067] font-semibold mb-1">
+                  First Name <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   required
@@ -53,7 +56,9 @@ function Register() {
               </div>
 
               <div>
-                <label className="block text-[#1e5067] font-semibold mb-1">Last Name</label>
+                <label className="block text-[#1e5067] font-semibold mb-1">
+                  Last Name <span className="text-red-500">*</span>
+                </label>
                 <input
                   type="text"
                   required
@@ -63,7 +68,9 @@ function Register() {
               </div>
 
               <div>
-                <label className="block text-[#1e5067] font-semibold mb-1">Email</label>
+                <label className="block text-[#1e5067] font-semibold mb-1">
+                  Email <span className="text-red-500">*</span>
+                </label>
                 <div className="relative">
                   <input
                     type="email"
@@ -75,7 +82,9 @@ function Register() {
               </div>
 
               <div>
-                <label className="block text-[#1e5067] font-semibold mb-1">Password</label>
+                <label className="block text-[#1e5067] font-semibold mb-1">
+                  Password <span className="text-red-500">*</span>
+                </label>
                 <div className="relative">
                   <input
                     type="password"
@@ -93,7 +102,9 @@ function Register() {
               </div>
 
               <div>
-                <label className="block text-[#1e5067] font-semibold mb-1">Confirm Password</label>
+                <label className="block text-[#1e5067] font-semibold mb-1">
+                  Confirm Password <span className="text-red-500">*</span>
+                </label>
                 <div className="relative">
                   <input
                     type='password'

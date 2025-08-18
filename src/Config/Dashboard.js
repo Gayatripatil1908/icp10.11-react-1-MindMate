@@ -33,4 +33,20 @@ const habitList = [
   { name: "Sleep Early", icon: Moon, color: "from-[#159ab7] to-[#1e5067]" },
 ];
 
-export {activitiesList, weatherList, healthList, habitList}
+const stressLevels = {
+  1: "Relaxed",
+  2: "Calm",
+  3: "Manageable",
+  4: "Tense",
+  5: "Overwhelmed",
+};
+
+const energyLevels = {
+  1: "Exhausted",
+  2: "Tired",
+  3: "Okay",
+  4: "Active",
+  5: "Energetic",
+};
+
+export {activitiesList, weatherList, healthList, habitList, stressLevels, energyLevels};

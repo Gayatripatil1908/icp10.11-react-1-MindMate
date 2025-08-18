@@ -9,6 +9,7 @@ import {
   Zap,
   Trash2,
 } from "lucide-react";
+import { energyLevels, stressLevels } from "../Config/Dashboard";
 
 function CheckinCard({ entry, onDelete, index }) {
   return (
@@ -30,7 +31,7 @@ function CheckinCard({ entry, onDelete, index }) {
 
       <div className="space-y-2 text-sm">
         <p className="flex items-center gap-2">
-          <Smile size={18} className="text-yellow-400" />
+          <Smile size={18} className="text-yellow-500" />
           <span className="font-medium">Mood:</span> {entry.mood}
         </p>
 
@@ -40,39 +41,41 @@ function CheckinCard({ entry, onDelete, index }) {
         </p>
 
         <p className="flex items-center gap-2">
-          <Activity size={18} className="text-[#9ac5d3]" />
+          <Activity size={18} className="text-[#18d024]" />
           <span className="font-medium">Activities:</span>
           <span>{entry.selectedActivities.join(", ") || "None"}</span>
         </p>
 
         <p className="flex items-center gap-2">
-          <Zap size={18} className="text-red-400" />
-          <span className="font-medium">Stress:</span> {entry.stress}
+          <Zap size={18} className="text-red-500" />
+          <span className="font-medium">Stress:</span>
+          {stressLevels[entry.stress]} ({entry.stress}/5)
         </p>
 
         <p className="flex items-center gap-2">
-          <Zap size={18} className="text-yellow-400" />
-          <span className="font-medium">Energy:</span> {entry.energy}
+          <Zap size={18} className="text-yellow-500" />
+          <span className="font-medium">Energy:</span>
+          {energyLevels[entry.energy]} ({entry.energy}/5)
         </p>
 
         <p className="flex items-center gap-2">
-          <Wind size={18} className="text-[#9ac5d3]" />
+          <Wind size={18} className="text-[#5c1ec8]" />
           <span className="font-medium">Weather:</span> {entry.weather}
         </p>
 
         <p className="flex items-center gap-2">
-          <Heart size={18} className="text-pink-400" />
+          <Heart size={18} className="text-red-500" />
           <span className="font-medium">Health:</span> {entry.health}
         </p>
 
         <p className="flex items-start gap-2">
-          <StickyNote size={18} className="text-[#9ac5d3] mt-1" />
+          <StickyNote size={18} className="text-[#129494] mt-1" />
           <span className="font-medium">Notes:</span>
           <span>{entry.notes || "No notes"}</span>
         </p>
 
         <p className="flex items-center gap-2">
-          <Heart size={18} className="text-green-400" />
+          <Heart size={18} className="text-green-500" />
           <span className="font-medium">Habits Done:</span>
           <span>{entry.doneHabits.join(", ") || "None"}</span>
         </p>
